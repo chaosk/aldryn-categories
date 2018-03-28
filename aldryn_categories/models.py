@@ -32,9 +32,6 @@ class CategoryManager(TranslatableManager, NS_NodeManager):
             using=self._db
         ).order_by('tree_id', 'lft')
 
-    if django.VERSION < (1, 8):  # pragma: no cover
-        get_query_set = get_queryset
-
 
 #
 # TODO: I would have preferred to make this a base class "CategoryBase" which
